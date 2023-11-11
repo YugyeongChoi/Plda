@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		91B29A102AFBE5F800B904A9 /* plda_miniApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B29A0F2AFBE5F800B904A9 /* plda_miniApp.swift */; };
-		91B29A122AFBE5F800B904A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B29A112AFBE5F800B904A9 /* ContentView.swift */; };
 		91B29A142AFBE5FB00B904A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91B29A132AFBE5FB00B904A9 /* Assets.xcassets */; };
 		91B29A172AFBE5FB00B904A9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91B29A162AFBE5FB00B904A9 /* Preview Assets.xcassets */; };
 		91B29A212AFBE5FB00B904A9 /* plda_miniTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B29A202AFBE5FB00B904A9 /* plda_miniTests.swift */; };
 		91B29A2B2AFBE5FB00B904A9 /* plda_miniUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B29A2A2AFBE5FB00B904A9 /* plda_miniUITests.swift */; };
 		91B29A2D2AFBE5FB00B904A9 /* plda_miniUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B29A2C2AFBE5FB00B904A9 /* plda_miniUITestsLaunchTests.swift */; };
+		91B29A3C2AFBE6BD00B904A9 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B29A3B2AFBE6BD00B904A9 /* model.swift */; };
+		91B29A402AFBE7EC00B904A9 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B29A3F2AFBE7EC00B904A9 /* EditView.swift */; };
+		91B29A422AFBE80D00B904A9 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B29A412AFBE80D00B904A9 /* ResultView.swift */; };
+		91B29A442AFBE82600B904A9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B29A432AFBE82600B904A9 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +39,6 @@
 /* Begin PBXFileReference section */
 		91B29A0C2AFBE5F800B904A9 /* plda mini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "plda mini.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B29A0F2AFBE5F800B904A9 /* plda_miniApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = plda_miniApp.swift; sourceTree = "<group>"; };
-		91B29A112AFBE5F800B904A9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		91B29A132AFBE5FB00B904A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91B29A162AFBE5FB00B904A9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		91B29A1C2AFBE5FB00B904A9 /* plda miniTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "plda miniTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +46,10 @@
 		91B29A262AFBE5FB00B904A9 /* plda miniUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "plda miniUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B29A2A2AFBE5FB00B904A9 /* plda_miniUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = plda_miniUITests.swift; sourceTree = "<group>"; };
 		91B29A2C2AFBE5FB00B904A9 /* plda_miniUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = plda_miniUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		91B29A3B2AFBE6BD00B904A9 /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
+		91B29A3F2AFBE7EC00B904A9 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		91B29A412AFBE80D00B904A9 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		91B29A432AFBE82600B904A9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +100,11 @@
 		91B29A0E2AFBE5F800B904A9 /* plda mini */ = {
 			isa = PBXGroup;
 			children = (
+				91B29A3B2AFBE6BD00B904A9 /* model.swift */,
 				91B29A0F2AFBE5F800B904A9 /* plda_miniApp.swift */,
-				91B29A112AFBE5F800B904A9 /* ContentView.swift */,
+				91B29A432AFBE82600B904A9 /* MainView.swift */,
+				91B29A3F2AFBE7EC00B904A9 /* EditView.swift */,
+				91B29A412AFBE80D00B904A9 /* ResultView.swift */,
 				91B29A132AFBE5FB00B904A9 /* Assets.xcassets */,
 				91B29A152AFBE5FB00B904A9 /* Preview Content */,
 			);
@@ -257,7 +266,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91B29A122AFBE5F800B904A9 /* ContentView.swift in Sources */,
+				91B29A442AFBE82600B904A9 /* MainView.swift in Sources */,
+				91B29A3C2AFBE6BD00B904A9 /* model.swift in Sources */,
+				91B29A422AFBE80D00B904A9 /* ResultView.swift in Sources */,
+				91B29A402AFBE7EC00B904A9 /* EditView.swift in Sources */,
 				91B29A102AFBE5F800B904A9 /* plda_miniApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,6 +434,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"plda mini/Preview Content\"";
+				DEVELOPMENT_TEAM = 9ZUDU3P6YG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -450,6 +463,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"plda mini/Preview Content\"";
+				DEVELOPMENT_TEAM = 9ZUDU3P6YG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

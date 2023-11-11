@@ -9,11 +9,28 @@ import SwiftUI
 
 struct EditView: View {
     
-    var diary : Diary? = nil
+    private var diary : Diary? = nil
+    @State private var title : String = ""
     @State private var content : String = ""
-    
+    @Environment(Path.self) var path
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            TextEditor(text: $title)
+            TextEditor(text: $content)
+            Spacer()
+        }
+        .navigationTitle("일기 작성")
+        .toolbar {
+            ToolbarItemGroup(placement: .topBarTrailing) {
+                Button(action: {
+                    path.stack.removeLast()
+                    
+                }, label: {
+                    Text("저장")
+                })
+            }
+        }
     }
 }
 

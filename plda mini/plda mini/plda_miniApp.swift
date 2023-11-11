@@ -7,11 +7,19 @@
 
 import SwiftUI
 
+@Observable
+class Path {
+    var stack : NavigationPath = NavigationPath()
+}
+
 @main
 struct plda_miniApp: App {
+    @State private var path = Path()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
+                .environment(path)
         }
     }
 }
