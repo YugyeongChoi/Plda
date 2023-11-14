@@ -15,11 +15,13 @@ class Path {
 @main
 struct plda_miniApp: App {
     @State private var path = Path()
+    @State private var diaryStore = DiaryStore()
     
     var body: some Scene {
         WindowGroup {
             MainView()
                 .environment(path)
+                .environment(diaryStore)
         }
     }
 }

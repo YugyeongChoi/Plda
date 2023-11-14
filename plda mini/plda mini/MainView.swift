@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct MainView: View {
-    @Environment(Path.self) var path : Path
+    @Environment(DiaryStore.self) var diaryStore
+    @Environment(Path.self) var path
     
     var body: some View {
         @Bindable var path = path
         
         NavigationStack (path: $path.stack){
-            List(diaries, id: \.id) { diary in
+            List(diaryStore.list, id: \.id) { diary in
                 Text(diary.title)
             }
             .navigationTitle("Main")
@@ -32,4 +33,6 @@ struct MainView: View {
 
 #Preview {
     MainView()
+        .environment(Path())
+        .environment(DiaryStore())
 }

@@ -50,6 +50,7 @@
 		91B29A3F2AFBE7EC00B904A9 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		91B29A412AFBE80D00B904A9 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		91B29A432AFBE82600B904A9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		91FA14C92B01FFE400F51933 /* plda-mini-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "plda-mini-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +101,7 @@
 		91B29A0E2AFBE5F800B904A9 /* plda mini */ = {
 			isa = PBXGroup;
 			children = (
+				91FA14C92B01FFE400F51933 /* plda-mini-Info.plist */,
 				91B29A3B2AFBE6BD00B904A9 /* model.swift */,
 				91B29A0F2AFBE5F800B904A9 /* plda_miniApp.swift */,
 				91B29A432AFBE82600B904A9 /* MainView.swift */,
@@ -437,6 +439,7 @@
 				DEVELOPMENT_TEAM = 9ZUDU3P6YG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "plda-mini-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -466,6 +469,7 @@
 				DEVELOPMENT_TEAM = 9ZUDU3P6YG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "plda-mini-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
