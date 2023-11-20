@@ -12,7 +12,8 @@ struct EditView: View {
     @State private var draftDiary: Diary = Diary(title: "", content: "")
     @Environment(Path.self) var path
     @Environment(DiaryStore.self) var diaryStore
-    @State private var isPresented = false
+    @State private var isPlayListPresented = false
+    @State private var isButtonPresented = false
     
     @State var showingAlert: Bool = false
     
@@ -44,16 +45,65 @@ struct EditView: View {
                     .frame(height: 1)
                     .background(Color.gray60)
                     .padding(.horizontal, 20)
-                                
+                
                 TextEditor(text: $draftDiary.content)
                     .padding(.horizontal, 20)
                     .scrollContentBackground(.hidden)
                     .font(.medium16)
                     .padding(.bottom,30)
                 
+                if(isButtonPresented){
+                    VStack(spacing:12){
+                        Button(action: {
+                            Task {
+                                do {
+                                    guard let response = try await requestPost(text: draftDiary.content) else {
+                                        throw PostErr.decodeError
+                                    }
+                                    draftDiary.youtubeDataListUpdate(list: response)
+                                    diaryStore.append(diary: draftDiary)
+                                }
+                                catch {
+                                    print("fail")
+                                }
+                                
+                            }
+                            isPlayListPresented = true
+                        },
+                               label: {
+                                HStack{
+                                    Spacer()
+                                    Text("노래 들을 준비 완료!")
+                                        .font(.bold16)
+                                        .foregroundColor(Color.white)
+                                        .padding(.vertical,9)
+                                    Spacer()
+                                }
+                                .background(Color.darkGreen)
+                                .cornerRadius(12)
+                                .padding(.horizontal,20)
+                        })
+                        
+                        Button(action: {
+                            isButtonPresented = false
+                        },
+                               label: {
+                            HStack{
+                                Spacer()
+                                Text("조금 더 작성할래요.")
+                                    .font(.bold16)
+                                    .foregroundColor(Color.gray80)
+                                    .padding(.vertical,9)
+                                Spacer()
+                            }
+                            .background(Color.gray10)
+                            .cornerRadius(12)
+                            .padding(.horizontal,20)
+                        })
+                    }
+                }
+                
             }
-            
-            
         } //ZStack
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(
@@ -81,26 +131,13 @@ struct EditView: View {
             
             ToolbarItem(placement: .topBarTrailing) {
                 Button(action: {
-                    Task {
-                        do {
-                            guard let response = try await requestPost(text: draftDiary.content) else {
-                                throw PostErr.decodeError
-                            }
-                            draftDiary.youtubeDataListUpdate(list: response)
-                            diaryStore.append(diary: draftDiary)
-                        }
-                        catch {
-                            print("fail")
-                        }
-                        
-                    }
-                    isPresented = true
+                    isButtonPresented.toggle()
                 }, label: {
                     Image("playlist")
                 })
             }
         }
-        .navigationDestination(isPresented: $isPresented){
+        .navigationDestination(isPresented: $isPlayListPresented){
             ResultView(result: draftDiary.youtubeData)
         }
         
