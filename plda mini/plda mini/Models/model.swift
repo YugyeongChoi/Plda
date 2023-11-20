@@ -34,7 +34,14 @@ class DiaryStore {
         list = [
             Diary(title: "일기1", content: "어쩌고저쩌고"),
             Diary(title: "일기2", content: "어쩌고저쩌고"),
-            Diary(title: "일기3", content: "어쩌고저쩌고")
+            Diary(title: "일기3", content: "어쩌고저쩌고"),
+            Diary(title: "일기4", content: "어쩌고저쩌고"),
+            Diary(title: "일기5", content: "어쩌고저쩌고"),
+            Diary(title: "일기6", content: "어쩌고저쩌고"),
+            Diary(title: "일기7", content: "어쩌고저쩌고"),
+            Diary(title: "일기8", content: "어쩌고저쩌고"),
+            Diary(title: "일기9", content: "어쩌고저쩌고")
+
         ]
     }
     

@@ -17,6 +17,39 @@
 		91B29A402AFBE7EC00B904A9 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B29A3F2AFBE7EC00B904A9 /* EditView.swift */; };
 		91B29A422AFBE80D00B904A9 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B29A412AFBE80D00B904A9 /* ResultView.swift */; };
 		91B29A442AFBE82600B904A9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B29A432AFBE82600B904A9 /* MainView.swift */; };
+		C2B264B02B049D1A002275B2 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = C2B264A72B049D19002275B2 /* Pretendard-Thin.otf */; };
+		C2B264B12B049D1A002275B2 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = C2B264A72B049D19002275B2 /* Pretendard-Thin.otf */; };
+		C2B264B22B049D1A002275B2 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = C2B264A72B049D19002275B2 /* Pretendard-Thin.otf */; };
+		C2B264B32B049D1A002275B2 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C2B264A82B049D19002275B2 /* Pretendard-SemiBold.otf */; };
+		C2B264B42B049D1A002275B2 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C2B264A82B049D19002275B2 /* Pretendard-SemiBold.otf */; };
+		C2B264B52B049D1A002275B2 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C2B264A82B049D19002275B2 /* Pretendard-SemiBold.otf */; };
+		C2B264B62B049D1A002275B2 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C2B264A92B049D19002275B2 /* Pretendard-Bold.otf */; };
+		C2B264B72B049D1A002275B2 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C2B264A92B049D19002275B2 /* Pretendard-Bold.otf */; };
+		C2B264B82B049D1A002275B2 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C2B264A92B049D19002275B2 /* Pretendard-Bold.otf */; };
+		C2B264B92B049D1A002275B2 /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C2B264AA2B049D19002275B2 /* Pretendard-ExtraBold.otf */; };
+		C2B264BA2B049D1A002275B2 /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C2B264AA2B049D19002275B2 /* Pretendard-ExtraBold.otf */; };
+		C2B264BB2B049D1A002275B2 /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C2B264AA2B049D19002275B2 /* Pretendard-ExtraBold.otf */; };
+		C2B264BC2B049D1A002275B2 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = C2B264AB2B049D19002275B2 /* Pretendard-Medium.otf */; };
+		C2B264BD2B049D1A002275B2 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = C2B264AB2B049D19002275B2 /* Pretendard-Medium.otf */; };
+		C2B264BE2B049D1A002275B2 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = C2B264AB2B049D19002275B2 /* Pretendard-Medium.otf */; };
+		C2B264BF2B049D1A002275B2 /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = C2B264AC2B049D19002275B2 /* Pretendard-Black.otf */; };
+		C2B264C02B049D1A002275B2 /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = C2B264AC2B049D19002275B2 /* Pretendard-Black.otf */; };
+		C2B264C12B049D1A002275B2 /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = C2B264AC2B049D19002275B2 /* Pretendard-Black.otf */; };
+		C2B264C22B049D1A002275B2 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = C2B264AD2B049D19002275B2 /* Pretendard-ExtraLight.otf */; };
+		C2B264C32B049D1A002275B2 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = C2B264AD2B049D19002275B2 /* Pretendard-ExtraLight.otf */; };
+		C2B264C42B049D1A002275B2 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = C2B264AD2B049D19002275B2 /* Pretendard-ExtraLight.otf */; };
+		C2B264C52B049D1A002275B2 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = C2B264AE2B049D19002275B2 /* Pretendard-Light.otf */; };
+		C2B264C62B049D1A002275B2 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = C2B264AE2B049D19002275B2 /* Pretendard-Light.otf */; };
+		C2B264C72B049D1A002275B2 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = C2B264AE2B049D19002275B2 /* Pretendard-Light.otf */; };
+		C2B264C82B049D1A002275B2 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C2B264AF2B049D1A002275B2 /* Pretendard-Regular.otf */; };
+		C2B264C92B049D1A002275B2 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C2B264AF2B049D1A002275B2 /* Pretendard-Regular.otf */; };
+		C2B264CA2B049D1A002275B2 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C2B264AF2B049D1A002275B2 /* Pretendard-Regular.otf */; };
+		C2B264CD2B049D50002275B2 /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B264CC2B049D50002275B2 /* FontManager.swift */; };
+		C2B264CE2B049D50002275B2 /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B264CC2B049D50002275B2 /* FontManager.swift */; };
+		C2B264CF2B049D50002275B2 /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B264CC2B049D50002275B2 /* FontManager.swift */; };
+		C2B264D12B049D6D002275B2 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B264D02B049D6D002275B2 /* ColorManager.swift */; };
+		C2B264D22B049D6D002275B2 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B264D02B049D6D002275B2 /* ColorManager.swift */; };
+		C2B264D32B049D6D002275B2 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B264D02B049D6D002275B2 /* ColorManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,20 +70,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		91B29A0C2AFBE5F800B904A9 /* plda mini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "plda mini.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		91B29A0C2AFBE5F800B904A9 /* Plda mini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Plda mini.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B29A0F2AFBE5F800B904A9 /* plda_miniApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = plda_miniApp.swift; sourceTree = "<group>"; };
 		91B29A132AFBE5FB00B904A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91B29A162AFBE5FB00B904A9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		91B29A1C2AFBE5FB00B904A9 /* plda miniTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "plda miniTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		91B29A1C2AFBE5FB00B904A9 /* Plda miniTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Plda miniTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B29A202AFBE5FB00B904A9 /* plda_miniTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = plda_miniTests.swift; sourceTree = "<group>"; };
-		91B29A262AFBE5FB00B904A9 /* plda miniUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "plda miniUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		91B29A262AFBE5FB00B904A9 /* Plda miniUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Plda miniUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B29A2A2AFBE5FB00B904A9 /* plda_miniUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = plda_miniUITests.swift; sourceTree = "<group>"; };
 		91B29A2C2AFBE5FB00B904A9 /* plda_miniUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = plda_miniUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		91B29A3B2AFBE6BD00B904A9 /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
 		91B29A3F2AFBE7EC00B904A9 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		91B29A412AFBE80D00B904A9 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		91B29A432AFBE82600B904A9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		91FA14C92B01FFE400F51933 /* plda-mini-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "plda-mini-Info.plist"; sourceTree = SOURCE_ROOT; };
+		91FA14C92B01FFE400F51933 /* Plda-mini-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Plda-mini-Info.plist"; sourceTree = SOURCE_ROOT; };
+		C2B264A72B049D19002275B2 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
+		C2B264A82B049D19002275B2 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		C2B264A92B049D19002275B2 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		C2B264AA2B049D19002275B2 /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
+		C2B264AB2B049D19002275B2 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		C2B264AC2B049D19002275B2 /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
+		C2B264AD2B049D19002275B2 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
+		C2B264AE2B049D19002275B2 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
+		C2B264AF2B049D1A002275B2 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		C2B264CC2B049D50002275B2 /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
+		C2B264D02B049D6D002275B2 /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,9 +135,9 @@
 		91B29A0D2AFBE5F800B904A9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				91B29A0C2AFBE5F800B904A9 /* plda mini.app */,
-				91B29A1C2AFBE5FB00B904A9 /* plda miniTests.xctest */,
-				91B29A262AFBE5FB00B904A9 /* plda miniUITests.xctest */,
+				91B29A0C2AFBE5F800B904A9 /* Plda mini.app */,
+				91B29A1C2AFBE5FB00B904A9 /* Plda miniTests.xctest */,
+				91B29A262AFBE5FB00B904A9 /* Plda miniUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,13 +145,11 @@
 		91B29A0E2AFBE5F800B904A9 /* plda mini */ = {
 			isa = PBXGroup;
 			children = (
-				91FA14C92B01FFE400F51933 /* plda-mini-Info.plist */,
-				91B29A3B2AFBE6BD00B904A9 /* model.swift */,
+				91FA14C92B01FFE400F51933 /* Plda-mini-Info.plist */,
 				91B29A0F2AFBE5F800B904A9 /* plda_miniApp.swift */,
-				91B29A432AFBE82600B904A9 /* MainView.swift */,
-				91B29A3F2AFBE7EC00B904A9 /* EditView.swift */,
-				91B29A412AFBE80D00B904A9 /* ResultView.swift */,
-				91B29A132AFBE5FB00B904A9 /* Assets.xcassets */,
+				C2B264A12B049B22002275B2 /* Models */,
+				C2B264A02B049B08002275B2 /* Views */,
+				C2B264A62B049CF6002275B2 /* Resource */,
 				91B29A152AFBE5FB00B904A9 /* Preview Content */,
 			);
 			path = "plda mini";
@@ -138,12 +180,65 @@
 			path = "plda miniUITests";
 			sourceTree = "<group>";
 		};
+		C2B264A02B049B08002275B2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				91B29A432AFBE82600B904A9 /* MainView.swift */,
+				91B29A3F2AFBE7EC00B904A9 /* EditView.swift */,
+				91B29A412AFBE80D00B904A9 /* ResultView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C2B264A12B049B22002275B2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				91B29A3B2AFBE6BD00B904A9 /* model.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C2B264A62B049CF6002275B2 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				C2B264CB2B049D39002275B2 /* Managers */,
+				91B29A132AFBE5FB00B904A9 /* Assets.xcassets */,
+				C2B264D42B049D85002275B2 /* Fonts */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		C2B264CB2B049D39002275B2 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C2B264CC2B049D50002275B2 /* FontManager.swift */,
+				C2B264D02B049D6D002275B2 /* ColorManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		C2B264D42B049D85002275B2 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C2B264AC2B049D19002275B2 /* Pretendard-Black.otf */,
+				C2B264A92B049D19002275B2 /* Pretendard-Bold.otf */,
+				C2B264AA2B049D19002275B2 /* Pretendard-ExtraBold.otf */,
+				C2B264AD2B049D19002275B2 /* Pretendard-ExtraLight.otf */,
+				C2B264AB2B049D19002275B2 /* Pretendard-Medium.otf */,
+				C2B264AE2B049D19002275B2 /* Pretendard-Light.otf */,
+				C2B264AF2B049D1A002275B2 /* Pretendard-Regular.otf */,
+				C2B264A82B049D19002275B2 /* Pretendard-SemiBold.otf */,
+				C2B264A72B049D19002275B2 /* Pretendard-Thin.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		91B29A0B2AFBE5F800B904A9 /* plda mini */ = {
+		91B29A0B2AFBE5F800B904A9 /* Plda mini */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 91B29A302AFBE5FB00B904A9 /* Build configuration list for PBXNativeTarget "plda mini" */;
+			buildConfigurationList = 91B29A302AFBE5FB00B904A9 /* Build configuration list for PBXNativeTarget "Plda mini" */;
 			buildPhases = (
 				91B29A082AFBE5F800B904A9 /* Sources */,
 				91B29A092AFBE5F800B904A9 /* Frameworks */,
@@ -153,14 +248,14 @@
 			);
 			dependencies = (
 			);
-			name = "plda mini";
+			name = "Plda mini";
 			productName = "plda mini";
-			productReference = 91B29A0C2AFBE5F800B904A9 /* plda mini.app */;
+			productReference = 91B29A0C2AFBE5F800B904A9 /* Plda mini.app */;
 			productType = "com.apple.product-type.application";
 		};
-		91B29A1B2AFBE5FB00B904A9 /* plda miniTests */ = {
+		91B29A1B2AFBE5FB00B904A9 /* Plda miniTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 91B29A332AFBE5FB00B904A9 /* Build configuration list for PBXNativeTarget "plda miniTests" */;
+			buildConfigurationList = 91B29A332AFBE5FB00B904A9 /* Build configuration list for PBXNativeTarget "Plda miniTests" */;
 			buildPhases = (
 				91B29A182AFBE5FB00B904A9 /* Sources */,
 				91B29A192AFBE5FB00B904A9 /* Frameworks */,
@@ -171,14 +266,14 @@
 			dependencies = (
 				91B29A1E2AFBE5FB00B904A9 /* PBXTargetDependency */,
 			);
-			name = "plda miniTests";
+			name = "Plda miniTests";
 			productName = "plda miniTests";
-			productReference = 91B29A1C2AFBE5FB00B904A9 /* plda miniTests.xctest */;
+			productReference = 91B29A1C2AFBE5FB00B904A9 /* Plda miniTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		91B29A252AFBE5FB00B904A9 /* plda miniUITests */ = {
+		91B29A252AFBE5FB00B904A9 /* Plda miniUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 91B29A362AFBE5FB00B904A9 /* Build configuration list for PBXNativeTarget "plda miniUITests" */;
+			buildConfigurationList = 91B29A362AFBE5FB00B904A9 /* Build configuration list for PBXNativeTarget "Plda miniUITests" */;
 			buildPhases = (
 				91B29A222AFBE5FB00B904A9 /* Sources */,
 				91B29A232AFBE5FB00B904A9 /* Frameworks */,
@@ -189,9 +284,9 @@
 			dependencies = (
 				91B29A282AFBE5FB00B904A9 /* PBXTargetDependency */,
 			);
-			name = "plda miniUITests";
+			name = "Plda miniUITests";
 			productName = "plda miniUITests";
-			productReference = 91B29A262AFBE5FB00B904A9 /* plda miniUITests.xctest */;
+			productReference = 91B29A262AFBE5FB00B904A9 /* Plda miniUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -217,7 +312,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 91B29A072AFBE5F800B904A9 /* Build configuration list for PBXProject "plda mini" */;
+			buildConfigurationList = 91B29A072AFBE5F800B904A9 /* Build configuration list for PBXProject "Plda" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -230,9 +325,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				91B29A0B2AFBE5F800B904A9 /* plda mini */,
-				91B29A1B2AFBE5FB00B904A9 /* plda miniTests */,
-				91B29A252AFBE5FB00B904A9 /* plda miniUITests */,
+				91B29A0B2AFBE5F800B904A9 /* Plda mini */,
+				91B29A1B2AFBE5FB00B904A9 /* Plda miniTests */,
+				91B29A252AFBE5FB00B904A9 /* Plda miniUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -242,8 +337,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2B264C22B049D1A002275B2 /* Pretendard-ExtraLight.otf in Resources */,
+				C2B264BC2B049D1A002275B2 /* Pretendard-Medium.otf in Resources */,
+				C2B264B02B049D1A002275B2 /* Pretendard-Thin.otf in Resources */,
+				C2B264C52B049D1A002275B2 /* Pretendard-Light.otf in Resources */,
+				C2B264B62B049D1A002275B2 /* Pretendard-Bold.otf in Resources */,
+				C2B264B92B049D1A002275B2 /* Pretendard-ExtraBold.otf in Resources */,
 				91B29A172AFBE5FB00B904A9 /* Preview Assets.xcassets in Resources */,
 				91B29A142AFBE5FB00B904A9 /* Assets.xcassets in Resources */,
+				C2B264C82B049D1A002275B2 /* Pretendard-Regular.otf in Resources */,
+				C2B264BF2B049D1A002275B2 /* Pretendard-Black.otf in Resources */,
+				C2B264B32B049D1A002275B2 /* Pretendard-SemiBold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +355,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2B264C32B049D1A002275B2 /* Pretendard-ExtraLight.otf in Resources */,
+				C2B264C62B049D1A002275B2 /* Pretendard-Light.otf in Resources */,
+				C2B264B12B049D1A002275B2 /* Pretendard-Thin.otf in Resources */,
+				C2B264BD2B049D1A002275B2 /* Pretendard-Medium.otf in Resources */,
+				C2B264C92B049D1A002275B2 /* Pretendard-Regular.otf in Resources */,
+				C2B264B72B049D1A002275B2 /* Pretendard-Bold.otf in Resources */,
+				C2B264BA2B049D1A002275B2 /* Pretendard-ExtraBold.otf in Resources */,
+				C2B264C02B049D1A002275B2 /* Pretendard-Black.otf in Resources */,
+				C2B264B42B049D1A002275B2 /* Pretendard-SemiBold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +371,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2B264C42B049D1A002275B2 /* Pretendard-ExtraLight.otf in Resources */,
+				C2B264C72B049D1A002275B2 /* Pretendard-Light.otf in Resources */,
+				C2B264B22B049D1A002275B2 /* Pretendard-Thin.otf in Resources */,
+				C2B264BE2B049D1A002275B2 /* Pretendard-Medium.otf in Resources */,
+				C2B264CA2B049D1A002275B2 /* Pretendard-Regular.otf in Resources */,
+				C2B264B82B049D1A002275B2 /* Pretendard-Bold.otf in Resources */,
+				C2B264BB2B049D1A002275B2 /* Pretendard-ExtraBold.otf in Resources */,
+				C2B264C12B049D1A002275B2 /* Pretendard-Black.otf in Resources */,
+				C2B264B52B049D1A002275B2 /* Pretendard-SemiBold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,9 +392,11 @@
 			files = (
 				91B29A442AFBE82600B904A9 /* MainView.swift in Sources */,
 				91B29A3C2AFBE6BD00B904A9 /* model.swift in Sources */,
+				C2B264CD2B049D50002275B2 /* FontManager.swift in Sources */,
 				91B29A422AFBE80D00B904A9 /* ResultView.swift in Sources */,
 				91B29A402AFBE7EC00B904A9 /* EditView.swift in Sources */,
 				91B29A102AFBE5F800B904A9 /* plda_miniApp.swift in Sources */,
+				C2B264D12B049D6D002275B2 /* ColorManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +404,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2B264CE2B049D50002275B2 /* FontManager.swift in Sources */,
 				91B29A212AFBE5FB00B904A9 /* plda_miniTests.swift in Sources */,
+				C2B264D22B049D6D002275B2 /* ColorManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +415,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				91B29A2D2AFBE5FB00B904A9 /* plda_miniUITestsLaunchTests.swift in Sources */,
+				C2B264D32B049D6D002275B2 /* ColorManager.swift in Sources */,
+				C2B264CF2B049D50002275B2 /* FontManager.swift in Sources */,
 				91B29A2B2AFBE5FB00B904A9 /* plda_miniUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,12 +426,12 @@
 /* Begin PBXTargetDependency section */
 		91B29A1E2AFBE5FB00B904A9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 91B29A0B2AFBE5F800B904A9 /* plda mini */;
+			target = 91B29A0B2AFBE5F800B904A9 /* Plda mini */;
 			targetProxy = 91B29A1D2AFBE5FB00B904A9 /* PBXContainerItemProxy */;
 		};
 		91B29A282AFBE5FB00B904A9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 91B29A0B2AFBE5F800B904A9 /* plda mini */;
+			target = 91B29A0B2AFBE5F800B904A9 /* Plda mini */;
 			targetProxy = 91B29A272AFBE5FB00B904A9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -361,6 +489,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Plda;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -418,6 +547,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Plda;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -439,7 +569,7 @@
 				DEVELOPMENT_TEAM = 9ZUDU3P6YG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "plda-mini-Info.plist";
+				INFOPLIST_FILE = "Plda-mini-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -469,7 +599,7 @@
 				DEVELOPMENT_TEAM = 9ZUDU3P6YG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "plda-mini-Info.plist";
+				INFOPLIST_FILE = "Plda-mini-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -503,7 +633,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/plda mini.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/plda mini";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Plda mini.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Plda mini";
 			};
 			name = Debug;
 		};
@@ -522,7 +652,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/plda mini.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/plda mini";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Plda mini.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Plda mini";
 			};
 			name = Release;
 		};
@@ -563,7 +693,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		91B29A072AFBE5F800B904A9 /* Build configuration list for PBXProject "plda mini" */ = {
+		91B29A072AFBE5F800B904A9 /* Build configuration list for PBXProject "Plda" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				91B29A2E2AFBE5FB00B904A9 /* Debug */,
@@ -572,7 +702,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		91B29A302AFBE5FB00B904A9 /* Build configuration list for PBXNativeTarget "plda mini" */ = {
+		91B29A302AFBE5FB00B904A9 /* Build configuration list for PBXNativeTarget "Plda mini" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				91B29A312AFBE5FB00B904A9 /* Debug */,
@@ -581,7 +711,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		91B29A332AFBE5FB00B904A9 /* Build configuration list for PBXNativeTarget "plda miniTests" */ = {
+		91B29A332AFBE5FB00B904A9 /* Build configuration list for PBXNativeTarget "Plda miniTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				91B29A342AFBE5FB00B904A9 /* Debug */,
@@ -590,7 +720,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		91B29A362AFBE5FB00B904A9 /* Build configuration list for PBXNativeTarget "plda miniUITests" */ = {
+		91B29A362AFBE5FB00B904A9 /* Build configuration list for PBXNativeTarget "Plda miniUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				91B29A372AFBE5FB00B904A9 /* Debug */,

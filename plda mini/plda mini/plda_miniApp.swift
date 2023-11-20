@@ -22,6 +22,7 @@ struct plda_miniApp: App {
             MainView()
                 .environment(path)
                 .environment(diaryStore)
+            
         }
     }
 }
