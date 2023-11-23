@@ -8,19 +8,18 @@
 import SwiftUI
 
 struct EditView: View {
-    
-    @State private var draftDiary: Diary = Diary(title: "", content: "")
     @Environment(Path.self) var path
+
+    @State private var draftDiary: Diary = Diary(title: "", content: "")
     @Environment(DiaryStore.self) var diaryStore
+
     @State private var isPlayListPresented = false
     @State private var isButtonPresented = false
-    
-    @State var showingAlert: Bool = false
+    @State private var showingAlert: Bool = false
     
     
     
     var body: some View {
-        
         ZStack{
             Image("background2")
                 .resizable()
@@ -109,7 +108,7 @@ struct EditView: View {
         .navigationBarItems(
             leading:
                 Text("WRITING")
-                .font(.semiBold)
+                .font(.bold24)
                 .multilineTextAlignment(.leading)
                 .foregroundColor(.darkGreen))
         .toolbar {
