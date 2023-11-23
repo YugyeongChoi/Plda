@@ -8,7 +8,7 @@
 import Foundation
 
 @Observable
-class Diary : Identifiable {
+class Diary : Identifiable, Hashable, Equatable{
     let id : UUID
     var title : String
     var content : String
@@ -24,15 +24,23 @@ class Diary : Identifiable {
     func youtubeDataListUpdate(list: YoutubeData) {
         self.youtubeData = list
     }
+    
+    static func == (lhs: Diary, rhs: Diary) -> Bool {
+        return lhs.content == rhs.content
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(title)
+        hasher.combine(content)
+    }
 }
-
 @Observable
 class DiaryStore {
     var list: [Diary]
     
     init() {
         list = [
-            Diary(title: "일기1", content: "어쩌고저쩌고"),
+            Diary(title: "일기1", content: "어쩌고저쩌고ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ"),
             Diary(title: "일기2", content: "어쩌고저쩌고"),
             Diary(title: "일기3", content: "어쩌고저쩌고"),
             Diary(title: "일기4", content: "어쩌고저쩌고"),
@@ -49,6 +57,8 @@ class DiaryStore {
         list.insert(diary, at: 0)
     }
 }
+
+
 
 
 struct Video: Codable {
