@@ -66,7 +66,7 @@ struct MainView: View {
                         trailing:
                             HStack {
                                 NavigationLink(value : 2) {
-                                    Image("heart")
+                                    Image("playlist")
                                         .frame(width: 20, height: 18)
                                 }
                                 
