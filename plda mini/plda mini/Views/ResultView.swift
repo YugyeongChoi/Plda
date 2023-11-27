@@ -10,7 +10,7 @@ import SwiftUI
 struct ResultView: View {
     @Environment(Path.self) var path
     @Environment(\.presentationMode) var presentationMode
-
+    
     var result: YoutubeData?
     
     var body: some View {
@@ -34,14 +34,8 @@ struct ResultView: View {
                 
             }
             Spacer()
-            Text("Ice Cream Cake")
-                .foregroundColor(.black)
-                .font(.bold16)
-                .padding(.top,45)
             
-            Text("Red Velvet (레드벨벳)")
-                .foregroundColor(.black)
-                .font(.medium12)
+            pagingView()
             
             if let result = result {
                 VStack {
@@ -58,12 +52,10 @@ struct ResultView: View {
                     Text(result.youtubeDataList[2].videoId)
                 }
             }
-            
-            Image("heart_gray")
-                .padding(.top,14)
+            Spacer()
             
             NavigationLink(destination: PlaylistView(),
-            label:{
+                           label:{
                 HStack{
                     Text("playlist 확인하러 가기")
                         .font(.medium12)
@@ -79,16 +71,6 @@ struct ResultView: View {
                 .padding(.top,10)
             })
             
-            HStack{
-                Image("good")
-                    .padding(.leading,40)
-                Spacer()
-                Image("play")
-                Spacer()
-                Image("bad")
-                    .padding(.trailing,40)
-                
-            }.padding(.top,100)
             Spacer()
         }
         .background(Image("background2"))
@@ -107,7 +89,64 @@ struct ResultView: View {
     }
 }
 
+struct pagingView: View {
+    @State var title: [String] = ["Ice Cream Cake", "손오공", "Drama"]
+    @State var heart = [Bool] (repeating: false ,count :3)
+    @State var isHeartTapped = false
+    
+    var body: some View {
+        TabView(){
+            ForEach(0..<title.count, id: \.self) { index in
+                VStack{
+                    Spacer()
+                    
+                    Text(title[index])
+                        .foregroundColor(.black)
+                        .font(.bold16)
+                        .padding(.bottom,18)
 
-#Preview {
-    ResultView(result: YoutubeData(youtubeDataList: [Video(videoId: "12345", tumbnailUrl: "12345", title: "12345")]))
+                    HStack{
+                        Spacer()
+                        
+                        Button(action: {
+                            //유튜브로 이동
+                        }, label: {
+                            Image("play")
+                                .resizable()
+                                .frame(width: 18, height: 18)
+                        })
+                        
+                        Spacer()
+                        
+                        Button(action: {
+                            heart[index].toggle()
+                        }, label: {
+                            Image(heart[index] ? "heart" : "heart_gray")
+                        })
+                        Spacer()
+                        
+                    }
+                    Spacer()
+                    
+                    Text("\(index+1)/3")
+                        .font(.medium12)
+                        .foregroundStyle(Color.gray60)
+                    
+                    
+                }
+                .padding(.all,10)
+            }
+            
+        }
+        .background(Color.white)
+        .cornerRadius(12)
+        .frame(width: 200,height: 200)
+        .shadow(color: Color.darkGreen.opacity(0.3), radius: 10, x: 0, y: 4)
+        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+    }
 }
+
+
+//#Preview {
+//    ResultView(result: YoutubeData(youtubeDataList: [Video(videoId: "12345", tumbnailUrl: "12345", title: "12345")]))
+//}
