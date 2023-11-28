@@ -65,7 +65,6 @@ struct Video: Codable {
     let videoId: String
     let tumbnailUrl: String
     let title: String
-    let isHeartTapped: Bool
 }
 
 struct YoutubeData: Codable {
