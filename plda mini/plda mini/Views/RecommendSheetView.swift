@@ -9,9 +9,10 @@ import Foundation
 import SwiftUI
 
 struct RecommendSheetView: View {
+
     @State var title: [String] = ["Ice Cream Cake", "손오공", "Drama"]
-    @State var heart = [Bool] (repeating: false ,count :3)
-    @State var isHeartTapped = false
+    @Environment(DiaryStore.self) var diaryStore
+    var diary: Diary
     
     var body: some View {
         ZStack{
@@ -27,20 +28,26 @@ struct RecommendSheetView: View {
             
             VStack{
                 TabView(){
-                    ForEach(0..<title.count, id: \.self) { index in
+                    ForEach(0..<3, id: \.self) { index in
                         VStack{
                             Spacer()
                             
-                            Text(title[index])
+                            AsyncImage(url: URL(string: diary.youtubeData!
+                            .youtubeDataList[index].tumbnailUrl)!) { image in
+                                image.resizable()
+                                } placeholder: { ProgressView()}
+                                                        
+                            Text(diary.youtubeData!.youtubeDataList[index].title)
                                 .foregroundColor(.black)
                                 .font(.bold16)
                                 .padding(.bottom,18)
-                            
+                        
                             HStack{
                                 Spacer()
                                 
                                 Button(action: {
-                                    //유튜브로 이동
+                                    if let url = URL(string: "https://www.youtube.com/watch?v=" +  diary.youtubeData!.youtubeDataList[index].videoId) {
+                                        UIApplication.shared.open(url, options: [:])}
                                 }, label: {
                                     Image("play")
                                         .resizable()

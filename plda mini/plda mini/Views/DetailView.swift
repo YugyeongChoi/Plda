@@ -82,7 +82,7 @@ struct DetailView: View {
             .sheet(isPresented: $isBottemSheetOpened)
             {
                 ZStack{
-                    RecommendSheetView()
+                    RecommendSheetView(diary: diary)
                         .presentationDetents([.height(300)])
                         .presentationDragIndicator(.hidden)
                         .presentationBackground(.clear)
