@@ -60,7 +60,7 @@ struct ResultView: View {
                                 Spacer()
                                 
                                 Button(action: {
-                                    if let url = URL(string: result.youtubeDataList[index].videoId) {
+                                    if let url = URL(string: "https://www.youtube.com/watch?v=" +  result.youtubeDataList[index].videoId) {
                                         UIApplication.shared.open(url, options: [:])}
                                     
                                 }, label: {

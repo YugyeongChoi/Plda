@@ -174,6 +174,8 @@ struct EditView: View {
                                     print("fail")
                                 }
                             }
+                            
+                            isPlayListPresented = true
 
                         } label: {
                             Text("저장")
