@@ -18,6 +18,7 @@
 		91B29A422AFBE80D00B904A9 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B29A412AFBE80D00B904A9 /* ResultView.swift */; };
 		91B29A442AFBE82600B904A9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B29A432AFBE82600B904A9 /* MainView.swift */; };
 		C252B8402B0F3BA8000084DF /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C252B83F2B0F3BA8000084DF /* DetailView.swift */; };
+		C252B8422B0F6AB5000084DF /* BottomsheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C252B8412B0F6AB5000084DF /* BottomsheetView.swift */; };
 		C252B8442B0F755F000084DF /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C252B8432B0F755F000084DF /* SettingView.swift */; };
 		C252B8462B0F75AD000084DF /* EditSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C252B8452B0F75AD000084DF /* EditSettingView.swift */; };
 		C2616A152B15FDA2006F7EAE /* promptModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2616A142B15FDA2006F7EAE /* promptModel.swift */; };
@@ -92,11 +93,11 @@
 		91B29A432AFBE82600B904A9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		91FA14C92B01FFE400F51933 /* Plda-mini-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Plda-mini-Info.plist"; sourceTree = SOURCE_ROOT; };
 		C252B83F2B0F3BA8000084DF /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		C252B8412B0F6AB5000084DF /* BottomsheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomsheetView.swift; sourceTree = "<group>"; };
 		C252B8432B0F755F000084DF /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		C252B8452B0F75AD000084DF /* EditSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSettingView.swift; sourceTree = "<group>"; };
 		C2616A142B15FDA2006F7EAE /* promptModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = promptModel.swift; sourceTree = "<group>"; };
 		C28459682B15C69F00DAD9D3 /* RecommendSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendSheetView.swift; sourceTree = "<group>"; };
-		C284596A2B15D90500DAD9D3 /* ImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewModel.swift; sourceTree = "<group>"; };
 		C2B264A72B049D19002275B2 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
 		C2B264A82B049D19002275B2 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		C2B264A92B049D19002275B2 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
@@ -198,8 +199,6 @@
 		C284596C2B15FB8900DAD9D3 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				9107E1272B15C46B004F6D44 /* prompt model.swift */,
-				C284596A2B15D90500DAD9D3 /* ImageViewModel.swift */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -209,10 +208,10 @@
 			children = (
 				91B29A432AFBE82600B904A9 /* MainView.swift */,
 				91B29A3F2AFBE7EC00B904A9 /* EditView.swift */,
-				C28459682B15C69F00DAD9D3 /* RecommendSheetView.swift */,
 				91B29A412AFBE80D00B904A9 /* ResultView.swift */,
 				C2CD63642B0B6F54001EF88E /* PlaylistView.swift */,
 				C252B83F2B0F3BA8000084DF /* DetailView.swift */,
+				C252B8412B0F6AB5000084DF /* BottomsheetView.swift */,
 				C252B8432B0F755F000084DF /* SettingView.swift */,
 				C252B8452B0F75AD000084DF /* EditSettingView.swift */,
 			);
@@ -431,7 +430,6 @@
 				91B29A102AFBE5F800B904A9 /* plda_miniApp.swift in Sources */,
 				C2B264D12B049D6D002275B2 /* ColorManager.swift in Sources */,
 				C252B8442B0F755F000084DF /* SettingView.swift in Sources */,
-				C28459692B15C69F00DAD9D3 /* RecommendSheetView.swift in Sources */,
 				C252B8462B0F75AD000084DF /* EditSettingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

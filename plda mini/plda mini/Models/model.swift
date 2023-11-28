@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 
 @Observable
 class Diary : Identifiable, Hashable, Equatable{

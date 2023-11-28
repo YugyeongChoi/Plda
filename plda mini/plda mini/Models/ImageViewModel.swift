@@ -1,5 +1,5 @@
 //
-//  RecommendSheetView.swift
+//  ImageViewModel.swift
 //  Plda mini
 //
 //  Created by 최유경 on 11/28/23.
