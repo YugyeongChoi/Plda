@@ -16,8 +16,10 @@ struct EditView: View {
     @State private var isPlayListPresented = false
     @State private var isButtonPresented = false
     @State private var showingAlert: Bool = false
+    @State private var isPromptSelectionPresented: Bool = false
     
-    
+    @State private var prompts: [Prompt] = .init()
+    @State private var promptID: Int = 1;
     
     var body: some View {
         ZStack{
@@ -54,33 +56,32 @@ struct EditView: View {
                 if(isButtonPresented){
                     VStack(spacing:12){
                         Button(action: {
+                            isPromptSelectionPresented = true
+                            
                             Task {
                                 do {
-                                    guard let response = try await requestPost(text: draftDiary.content) else {
-                                        throw PostErr.decodeError
-                                    }
-                                    draftDiary.youtubeDataListUpdate(list: response)
-                                    diaryStore.append(diary: draftDiary)
+                                    let response = try await requestGetPrompts()
+                                    
+                                    prompts = response
                                 }
                                 catch {
                                     print("fail")
                                 }
-                                
                             }
-                            isPlayListPresented = true
+                            
                         },
                                label: {
-                                HStack{
-                                    Spacer()
-                                    Text("노래 들을 준비 완료!")
-                                        .font(.bold16)
-                                        .foregroundColor(Color.white)
-                                        .padding(.vertical,9)
-                                    Spacer()
-                                }
-                                .background(Color.darkGreen)
-                                .cornerRadius(12)
-                                .padding(.horizontal,20)
+                            HStack{
+                                Spacer()
+                                Text("노래 들을 준비 완료!")
+                                    .font(.bold16)
+                                    .foregroundColor(Color.white)
+                                    .padding(.vertical,9)
+                                Spacer()
+                            }
+                            .background(Color.darkGreen)
+                            .cornerRadius(12)
+                            .padding(.horizontal,20)
                         })
                         
                         Button(action: {
@@ -101,9 +102,88 @@ struct EditView: View {
                         })
                     }
                 }
-                
             }
         } //ZStack
+        .sheet(isPresented: $isPromptSelectionPresented){
+            NavigationStack {
+                VStack {
+                    Text("🍀 어떤 노래를 추천 받고 싶나요?")
+                        .font(.headline)
+                        .padding(.vertical, 10)
+                    
+                    Button {
+                        
+                        promptID = 1
+                        
+                    } label: {
+                        HStack{
+                            Image(systemName: "applepencil.and.scribble")
+                            if (prompts.count > 0) {
+                                Text(prompts[0].prompt)
+                            }
+                        }
+                    }
+                    .buttonStyle(InsetRoundButton(labelColor: .white, backgroundColor: promptID == 1 ? Color.gray60 : Color.lightGreen))
+                    .padding(.vertical, 10)
+                    
+                    Button {
+                        
+                        promptID = 2
+                        
+                    } label: {
+                        HStack{
+                            Image(systemName: "applepencil.and.scribble")
+                            if (prompts.count > 0) {
+                                Text(prompts[1].prompt)
+                            }
+                        }
+                    }
+                    .buttonStyle(InsetRoundButton(labelColor: .white, backgroundColor: promptID == 2 ? Color.gray60 : Color.lightGreen))
+                    .padding(.vertical, 10)
+                    
+                    Button {
+                        
+                        promptID = 3
+                        
+                    } label: {
+                        HStack{
+                            Image(systemName: "applepencil.and.scribble")
+                            
+                            if (prompts.count > 0) {
+                                Text(prompts[2].prompt)
+                            }
+                        }
+                    }
+                    .buttonStyle(InsetRoundButton(labelColor: .white, backgroundColor: promptID == 3 ? Color.gray60 : Color.lightGreen))
+                    .padding(.vertical, 10)
+                }
+                .toolbar{
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button {
+                            isPromptSelectionPresented = false
+                            
+                            Task {
+                                do {
+                                    guard let response = try await requestPost(text: draftDiary.content, prompt: promptID) else {
+                                        throw PostErr.decodeError
+                                    }
+                                    draftDiary.youtubeDataListUpdate(list: response)
+                                    diaryStore.append(diary: draftDiary)
+                                }
+                                catch {
+                                    print("fail")
+                                }
+                            }
+
+                        } label: {
+                            Text("저장")
+                        }
+                        
+                    }
+                }
+            }
+            .presentationDetents([.height(350)])
+        }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(
             leading:
@@ -143,9 +223,15 @@ struct EditView: View {
     }
 }
 
-//#Preview {
-//    EditView()
-//        .environment(Path())
-//        .environment(DiaryStore())
-//}
-//
+struct InsetRoundButton: ButtonStyle {
+  var labelColor = Color.white
+  var backgroundColor = Color.blue
+  
+  func makeBody(configuration: Configuration) -> some View {
+    configuration.label
+      .foregroundColor(labelColor)
+      .frame(width: 370)
+      .padding(.vertical, 10)
+      .background(Capsule().fill(backgroundColor))
+  }
+}
