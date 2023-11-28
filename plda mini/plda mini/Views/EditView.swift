@@ -219,7 +219,7 @@ struct EditView: View {
             }
         }
         .navigationDestination(isPresented: $isPlayListPresented){
-            ResultView(result: draftDiary.youtubeData)
+            ResultView(prompts_id: promptID, result: draftDiary.youtubeData)
         }
         
     }

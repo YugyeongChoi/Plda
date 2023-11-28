@@ -9,11 +9,11 @@ import SwiftUI
 
 struct ResultView: View {
     @Environment(Path.self) var path
-    @Environment(\.presentationMode) var presentationMode
-    @State var title: [String] = ["Ice Cream Cake", "손오공", "Drama"]
+    
+    var prompts_id: Int
+
     @State var heart = [Bool] (repeating: false ,count :3)
     @State var isHeartTapped = false
-    
 
     var result: YoutubeData?
     
@@ -60,7 +60,7 @@ struct ResultView: View {
                                 Spacer()
                                 
                                 Button(action: {
-                                    if let url = URL(string: "https://www.youtube.com/watch?v=" +  result.youtubeDataList[index].videoId) {
+                                    if let url = URL(string: "https://www.youtube.com/watch?v=" + result.youtubeDataList[index].videoId) {
                                         UIApplication.shared.open(url, options: [:])}
                                     
                                 }, label: {
@@ -73,6 +73,10 @@ struct ResultView: View {
                                 
                                 Button(action: {
                                     heart[index].toggle()
+                                    
+                                    if (heart[index] == true) {
+                                        //feedback request
+                                    }
                                 }, label: {
                                     Image(heart[index] ? "heart" : "heart_gray")
                                 })
@@ -123,6 +127,17 @@ struct ResultView: View {
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 Button {
+                    let feedbackdata = makeFeedbacks(prompts_id: prompts_id, videos: result!.youtubeDataList, hearts: heart)
+                    
+                    Task {
+                        do {
+                            try await requestPost(feedbackData: feedbackdata)
+                        }
+                        catch {
+                            print("fail")
+                        }
+                    }
+        
                     path.stack.removeLast()
                 } label: {
                     HStack {
@@ -134,4 +149,13 @@ struct ResultView: View {
     }
 }
 
-
+func makeFeedbacks(prompts_id: Int, videos: [Video], hearts: [Bool]) -> [Feedback] {
+    var feedbacks: [Feedback] = []
+    
+    for i in 0...2 {
+        feedbacks.append(Feedback(prompts_id: prompts_id, title: videos[i].title, feedback: hearts[i] ? 1 : -1))
+    }
+    
+    return feedbacks
+}
+    

@@ -58,8 +58,17 @@ class DiaryStore {
     }
 }
 
-
-
+struct Feedback: Codable {
+    var prompts_id: Int = 0
+    var title: String = ""
+    var feedback: Int = 0
+    
+    init(prompts_id: Int, title: String, feedback: Int) {
+        self.prompts_id = prompts_id
+        self.title = title
+        self.feedback = feedback
+    }
+}
 
 struct Video: Codable {
     let videoId: String
@@ -123,6 +132,26 @@ func requestPost(text: String, prompt: Int) async throws -> YoutubeData? {
         print("decode fail")
         throw PostErr.decodeError
     }
+}
+
+func requestPost(feedbackData: [Feedback]) async throws {
+    let urlString = "http://61.254.228.107:1207/feedbacks/post"
+
+    guard let url = URL(string: urlString) else { throw PostErr.urlError }
+        
+    var request = URLRequest(url: url)
+    
+    request.httpMethod = "POST"
+    
+    let encoder = JSONEncoder()
+    let encodeData = try encoder.encode(feedbackData)
+    print(String(data: encodeData, encoding: .utf8)!)
+    
+    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+    
+    request.httpBody = encodeData
+    
+    let (_, _) = try await URLSession.shared.data(for: request)
 }
 
 enum PostErr: Error {
