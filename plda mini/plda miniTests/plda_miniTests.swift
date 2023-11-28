@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import plda_mini
+@testable import Plda_mini
 
 final class plda_miniTests: XCTestCase {
 
