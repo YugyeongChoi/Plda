@@ -48,9 +48,6 @@ struct MainView: View {
                                 .shadow(color: Color.darkGreen.opacity(0.3), radius: 10, x: 0, y: 4)
                                 .padding(EdgeInsets(top: 5, leading: 20, bottom:0, trailing: 20))
                             })
-                            .navigationDestination(for: Diary.self) { diary in
-                                 DetailView(diary: diary)
-                             }
                         } //Foreach
                     } //VStack
                     .padding(.top,12)
@@ -76,15 +73,7 @@ struct MainView: View {
                                     
                                 }
                             })
-                    .navigationDestination(for: Int.self) { value in
-                        switch value {
-                        case 1 : EditView()
-                        case 2 : PlaylistView()
-                        case 3 : SettingView()
-                        default: Text("")
-                        }
-                    }
-                    Spacer()
+                            Spacer()
                 } //ScrollView
                 ZStack{
                     Button(action: {}) {
@@ -102,6 +91,17 @@ struct MainView: View {
             } //VStack
             .background(Image("background2"))
         } //NavigationStack
+        .navigationDestination(for: Diary.self) { diary in
+             DetailView(diary: diary)
+         }
+        .navigationDestination(for: Int.self) { value in
+            switch value {
+            case 1 : EditView()
+            case 2 : PlaylistView()
+            case 3 : SettingView()
+            default: Text("")
+            }
+        }
     }
 }
 

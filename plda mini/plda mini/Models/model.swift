@@ -12,12 +12,14 @@ class Diary : Identifiable, Hashable, Equatable{
     let id : UUID
     var title : String
     var content : String
+    var editDate: Date
     var youtubeData : YoutubeData?
     
     init(title : String, content : String) {
         id = UUID()
         self.title = title
         self.content = content
+        self.editDate = .now
         self.youtubeData = nil
     }
     

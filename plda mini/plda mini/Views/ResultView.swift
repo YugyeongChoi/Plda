@@ -37,6 +37,7 @@ struct ResultView: View {
                     .padding(.leading,7)
                 
             }
+            
             Spacer()
                         
             if let result = result {
