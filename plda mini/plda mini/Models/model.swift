@@ -70,38 +70,38 @@ struct Feedback: Codable {
     }
 }
 
-struct Video: Codable {
+@Observable
+class PrefferdVideoStore {
+    var list: [Video] = []
+    
+    func append(video: Video) {
+        list.append(video)
+    }
+}
+
+class Video: Codable, Hashable {
     let videoId: String
     let tumbnailUrl: String
     let title: String
+
+    static func == (lhs: Video, rhs: Video) -> Bool {
+        return lhs.videoId == rhs.videoId
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(videoId)
+        hasher.combine(tumbnailUrl)
+        hasher.combine(title)
+    }
 }
 
-struct YoutubeData: Codable {
+//class TaggedVideo: Video {
+//    var isPrefferd: Bool = false
+//}
+
+class YoutubeData: Codable {
     let youtubeDataList: [Video]
 }
-
-//let jsonData = """
-//{
-//    "youtubeDataList": [
-//        {
-//            "videoId": "kMRLzSQorK0",
-//            "tumbnailUrl": "https://i.ytimg.com/vi/kMRLzSQorK0/hqdefault.jpg",
-//            "title": "[MV] KIM DONG RYUL (김동률) _ Reply (답장)"
-//        },
-//        {
-//            "videoId": "zjVlcAI7b9E",
-//            "tumbnailUrl": "https://i.ytimg.com/vi/zjVlcAI7b9E/hqdefault.jpg",
-//            "title": "[보이는 멜로디] 엠씨더맥스 - 나를 보낸다 옥타브 체크"
-//        },
-//        {
-//            "videoId": "Qle5cfCcuEY",
-//            "tumbnailUrl": "https://i.ytimg.com/vi/Qle5cfCcuEY/hqdefault.jpg",
-//            "title": "[따라學IT] 10. NAT와 포트 포워딩 - 이론"
-//        }
-//    ]
-//}
-//"""
-
 
 func requestPost(text: String, prompt: Int) async throws -> YoutubeData? {
     let urlString = "http://61.254.228.107:1207/gpt/post"

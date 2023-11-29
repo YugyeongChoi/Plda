@@ -9,14 +9,14 @@ import SwiftUI
 
 struct ResultView: View {
     @Environment(Path.self) var path
+    @Environment(PrefferdVideoStore.self) var prefferedVideos
     
     var prompts_id: Int
+    var result: YoutubeData?
 
     @State var heart = [Bool] (repeating: false ,count :3)
     @State var isHeartTapped = false
 
-    var result: YoutubeData?
-    
     var body: some View {
         VStack{
             HStack(spacing: 0){
@@ -74,9 +74,6 @@ struct ResultView: View {
                                 Button(action: {
                                     heart[index].toggle()
                                     
-                                    if (heart[index] == true) {
-                                        //feedback request
-                                    }
                                 }, label: {
                                     Image(heart[index] ? "heart" : "heart_gray")
                                 })
@@ -101,23 +98,24 @@ struct ResultView: View {
                 .shadow(color: Color.darkGreen.opacity(0.3), radius: 10, x: 0, y: 4)
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
             }
+            
             Spacer()
             
             NavigationLink(destination: PlaylistView(),
-                           label:{
-                HStack{
-                    Text("playlist 확인하러 가기")
-                        .font(.medium12)
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(.black)
-                        .padding(.horizontal,25)
-                        .padding(.vertical,10)
-                }
-                .overlay(
-                    RoundedRectangle(cornerRadius: 7)
-                        .stroke(Color.lightGreen, lineWidth: 2)
-                )
-                .padding(.top,10)
+                label:{
+                    HStack{
+                        Text("playlist 확인하러 가기")
+                            .font(.medium12)
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(.black)
+                            .padding(.horizontal,25)
+                            .padding(.vertical,10)
+                    }
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 7)
+                            .stroke(Color.lightGreen, lineWidth: 2)
+                    )
+                    .padding(.top,10)
             })
             
             Spacer()
@@ -127,6 +125,12 @@ struct ResultView: View {
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 Button {
+                    for i in 0...2 {
+                        if (heart[i]) {
+                            prefferedVideos.append(video: result!.youtubeDataList[i])
+                        }
+                    }
+                    
                     let feedbackdata = makeFeedbacks(prompts_id: prompts_id, videos: result!.youtubeDataList, hearts: heart)
                     
                     Task {

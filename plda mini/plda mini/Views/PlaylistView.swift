@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PlaylistView: View {
     @Environment(Path.self) var path
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(PrefferdVideoStore.self) var prefferedVideos
     
     var body: some View {
         
@@ -38,13 +38,14 @@ struct PlaylistView: View {
 }
 private func playListView() -> some View {
     @State var title: [String] = ["제목1", "제목2", "제목3"]
+    @Environment(PrefferdVideoStore.self) var prefferedVideos
     
     return VStack{
-        ForEach(title,id:\.self) { index in
+        ForEach(prefferedVideos.list, id:\.self) { video in
             HStack{
                 VStack(spacing: 5){
                     HStack{
-                        Text(index)
+                        Text(video.title)
                             .font(.bold16)
                             .multilineTextAlignment(.center)
                             .foregroundColor(.black)
