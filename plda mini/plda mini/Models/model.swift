@@ -23,6 +23,12 @@ class Diary : Identifiable, Hashable, Equatable{
         self.youtubeData = nil
     }
     
+    func getEditDateString() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyyMMdd"
+        return formatter.string(from: self.editDate)
+    }
+    
     func youtubeDataListUpdate(list: YoutubeData) {
         self.youtubeData = list
     }

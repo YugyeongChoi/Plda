@@ -34,7 +34,7 @@ struct MainView: View {
                                         }
                                         HStack{
                                             Spacer()
-                                            Text("20230706")
+                                            Text(diary.getEditDateString())
                                                 .font(.medium12)
                                                 .foregroundColor(.gray80)
                                         }
@@ -70,7 +70,6 @@ struct MainView: View {
                                 NavigationLink(value : 3) {
                                     Image("setting")
                                         .frame(width: 20, height: 16)
-                                    
                                 }
                             })
                             Spacer()
@@ -90,18 +89,18 @@ struct MainView: View {
                 
             } //VStack
             .background(Image("background2"))
-        } //NavigationStack
-        .navigationDestination(for: Diary.self) { diary in
-             DetailView(diary: diary)
-         }
-        .navigationDestination(for: Int.self) { value in
-            switch value {
-            case 1 : EditView()
-            case 2 : PlaylistView()
-            case 3 : SettingView()
-            default: Text("")
+            .navigationDestination(for: Diary.self) { diary in
+                 DetailView(diary: diary)
+             }
+            .navigationDestination(for: Int.self) { value in
+                switch value {
+                case 1 : EditView()
+                case 2 : PlaylistView()
+                case 3 : SettingView()
+                default: Text("")
+                }
             }
-        }
+        } //NavigationStack
     }
 }
 

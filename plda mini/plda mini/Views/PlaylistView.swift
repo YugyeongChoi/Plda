@@ -14,7 +14,15 @@ struct PlaylistView: View {
     var body: some View {
         
             ScrollView(.vertical, showsIndicators: true){
-                playListView()
+                if (prefferedVideos.list.isEmpty) {
+                    VStack{
+                        Spacer()
+                        Text("추가한 노래가 없습니다.")
+                    }
+                }
+                else {
+                    playListView()
+                }
             }
             .background(Image("background2"))
             .navigationBarBackButtonHidden()
@@ -36,6 +44,7 @@ struct PlaylistView: View {
         
     }
 }
+
 private func playListView() -> some View {
     @State var title: [String] = ["제목1", "제목2", "제목3"]
     @Environment(PrefferdVideoStore.self) var prefferedVideos

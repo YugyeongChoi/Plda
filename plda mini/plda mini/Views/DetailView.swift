@@ -33,7 +33,7 @@ struct DetailView: View {
                 
                 HStack{
                     Spacer()
-                    Text("20230727")
+                    Text(diary.getEditDateString())
                         .font(.medium12)
                         .padding(.trailing, 30)
                         .padding(.bottom,5)
