@@ -35,9 +35,10 @@ struct EditView: View {
                 
                 HStack{
                     Spacer()
-                    Text("20230727")
-                        .font(.medium12)
-                        .padding(.trailing, 30)
+                    
+                    DatePicker("editDate", selection: $draftDiary.editDate, in: ...Date(), displayedComponents: .date)
+                        .labelsHidden()
+                        .padding(.trailing, 20)
                         .padding(.bottom,5)
                 }
                 .opacity(0.8)
@@ -68,7 +69,6 @@ struct EditView: View {
                                     print("fail")
                                 }
                             }
-                            
                         },
                                label: {
                             HStack{
