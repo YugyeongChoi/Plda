@@ -23,6 +23,15 @@ class Diary : Identifiable, Hashable, Equatable{
         self.youtubeData = nil
     }
     
+    init(title : String, content : String, editDate: Date) {
+        id = UUID()
+        self.title = title
+        self.content = content
+        self.editDate = editDate
+        self.youtubeData = nil
+    }
+
+    
     func getEditDateString() -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyyMMdd"
@@ -48,15 +57,15 @@ class DiaryStore {
     
     init() {
         list = [
-            Diary(title: "일기1", content: "어쩌고저쩌고ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ"),
-            Diary(title: "일기2", content: "어쩌고저쩌고"),
-            Diary(title: "일기3", content: "어쩌고저쩌고"),
-            Diary(title: "일기4", content: "어쩌고저쩌고"),
-            Diary(title: "일기5", content: "어쩌고저쩌고"),
-            Diary(title: "일기6", content: "어쩌고저쩌고"),
-            Diary(title: "일기7", content: "어쩌고저쩌고"),
-            Diary(title: "일기8", content: "어쩌고저쩌고"),
-            Diary(title: "일기9", content: "어쩌고저쩌고")
+            Diary(title: "일기1", content: "어쩌고저쩌고ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ", editDate: stringToDate("20231129")),
+            Diary(title: "일기2", content: "어쩌고저쩌고", editDate: stringToDate("20231128")),
+            Diary(title: "일기3", content: "어쩌고저쩌고", editDate: stringToDate("20231127")),
+            Diary(title: "일기4", content: "어쩌고저쩌고", editDate: stringToDate("20231126")),
+            Diary(title: "일기5", content: "어쩌고저쩌고", editDate: stringToDate("20231125")),
+            Diary(title: "일기6", content: "어쩌고저쩌고", editDate: stringToDate("20231124")),
+            Diary(title: "일기7", content: "어쩌고저쩌고", editDate: stringToDate("20231123")),
+            Diary(title: "일기8", content: "어쩌고저쩌고", editDate: stringToDate("20231122")),
+            Diary(title: "일기9", content: "어쩌고저쩌고", editDate: stringToDate("20231121"))
 
         ]
     }
@@ -64,6 +73,12 @@ class DiaryStore {
     func append(diary: Diary) {
         list.insert(diary, at: 0)
     }
+}
+
+func stringToDate(_ string: String) -> Date {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyyMMdd"
+    return formatter.date(from: string)!
 }
 
 struct Feedback: Codable {
@@ -80,7 +95,11 @@ struct Feedback: Codable {
 
 @Observable
 class PrefferdVideoStore {
-    var list: [Video] = []
+    var list: [Video] = [
+        Video(videoId: "o69gtsmumbA", tumbnailUrl: "https://i.ytimg.com/vi/o69gtsmumbA/hqdefault.jpg", title: "I&#39;LL BE THERE / The Jackson 5"),
+        Video(videoId: "MiQoz_YYNg8", tumbnailUrl: "https://i.ytimg.com/vi/MiQoz_YYNg8/hqdefault.jpg", title: "Lean On Me - Music Travel Love (Iligan City, Philippines) Bill Withers Cover"),
+        Video(videoId: "M4yjfyW8CUY", tumbnailUrl: "https://i.ytimg.com/vi/M4yjfyW8CUY/hqdefault.jpg", title: "&quot;YOU&#39;VE GOT A FRIEND&quot; (w/ lyrics)  by James Taylor #You&#39;veGotAFriend #JamesTaylor")
+    ]
     
     func append(video: Video) {
         list.append(video)
@@ -88,9 +107,15 @@ class PrefferdVideoStore {
 }
 
 class Video: Codable, Hashable {
-    let videoId: String
-    let tumbnailUrl: String
-    let title: String
+    var videoId: String
+    var tumbnailUrl: String
+    var title: String
+    
+    init(videoId: String, tumbnailUrl: String, title: String) {
+        self.videoId = videoId
+        self.tumbnailUrl = tumbnailUrl
+        self.title = title
+    }
 
     static func == (lhs: Video, rhs: Video) -> Bool {
         return lhs.videoId == rhs.videoId

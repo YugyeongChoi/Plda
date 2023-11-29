@@ -21,7 +21,13 @@ struct PlaylistView: View {
                     }
                 }
                 else {
-                    playListView()
+                    VStack{
+                        ForEach(prefferedVideos.list, id:\.self) { video in
+                            PlaylistCell(video: video)
+                        }
+                    } //VStack
+                    .padding(.top,12)
+                    .padding(.bottom,30)
                 }
             }
             .background(Image("background2"))
@@ -40,45 +46,41 @@ struct PlaylistView: View {
                             Image("home")
                                 .frame(width: 20, height: 18)
                         }
-                    })
-        
+                    }
+            )
     }
 }
 
-private func playListView() -> some View {
-    @State var title: [String] = ["제목1", "제목2", "제목3"]
-    @Environment(PrefferdVideoStore.self) var prefferedVideos
+struct PlaylistCell: View {
+    var video: Video
     
-    return VStack{
-        ForEach(prefferedVideos.list, id:\.self) { video in
-            HStack{
-                VStack(spacing: 5){
-                    HStack{
-                        Text(video.title)
-                            .font(.bold16)
-                            .multilineTextAlignment(.center)
-                            .foregroundColor(.black)
-                            .padding(.leading,10)
-                        Spacer()
-                    }
-                    HStack{
-                        Spacer()
+    var body: some View {
+        HStack{
+            VStack(spacing: 5){
+                HStack{
+                    Text(video.title)
+                        .font(.bold16)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.black)
+                        .padding(.leading,10)
+                    
+                    Spacer()
+                    
+                    Button(action: {
+                        if let url = URL(string: "https://www.youtube.com/watch?v=" + video.videoId) {
+                            UIApplication.shared.open(url, options: [:])}
                         
-                        Text("20230704")
-                            .font(.medium12)
-                            .multilineTextAlignment(.center)
-                            .foregroundColor(.gray80)
-                            .padding(.trailing,5)
-                        
-                    }
+                    }, label: {
+                        Image("play")
+                            .resizable()
+                            .frame(width: 18, height: 18)
+                    })
                 }
-                .padding(EdgeInsets(top: 10, leading: 3, bottom: 10, trailing: 10))
             }
-            .background(Color.gray10)
-            .cornerRadius(12)
-            .padding(EdgeInsets(top: 5, leading: 20, bottom:0, trailing: 20))
+            .padding(EdgeInsets(top: 10, leading: 3, bottom: 10, trailing: 10))
         }
-    } //VStack
-    .padding(.top,12)
-    .padding(.bottom,30)
+        .background(Color.gray10)
+        .cornerRadius(12)
+        .padding(EdgeInsets(top: 5, leading: 20, bottom:0, trailing: 20))
+    }
 }

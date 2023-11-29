@@ -163,4 +163,3 @@ func makeFeedbacks(prompts_id: Int, videos: [Video], hearts: [Bool]) -> [Feedbac
     
     return feedbacks
 }
-    
