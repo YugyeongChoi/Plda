@@ -16,6 +16,7 @@ struct ResultView: View {
 
     @State var heart = [Bool] (repeating: false ,count :3)
     @State var isHeartTapped = false
+    
 
     var body: some View {
         VStack{
@@ -39,7 +40,9 @@ struct ResultView: View {
             }
             
             Spacer()
-                        
+        
+            LoadingView()
+            
             if let result = result {
                 TabView(){
                     ForEach(0..<result.youtubeDataList.count, id: \.self) { index in
@@ -152,7 +155,9 @@ struct ResultView: View {
             }
         }
     }
+    
 }
+
 
 func makeFeedbacks(prompts_id: Int, videos: [Video], hearts: [Bool]) -> [Feedback] {
     var feedbacks: [Feedback] = []
@@ -162,4 +167,38 @@ func makeFeedbacks(prompts_id: Int, videos: [Video], hearts: [Bool]) -> [Feedbac
     }
     
     return feedbacks
+}
+
+struct LoadingView: View {
+    @State private var isLoading = false
+
+    var body: some View {
+        ZStack {
+            VStack {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle())
+                    .scaleEffect(1)
+                    .padding(.top, 60)
+                    .opacity(isLoading ? 1 : 0)
+                
+                Text("노래를 불러오는 중이예요")
+                    .font(.medium12)
+                    .foregroundColor(Color.gray)
+                    .padding(.top, 30)
+                    .opacity(isLoading ? 1 : 0)
+            }
+            
+        }
+        .onAppear {
+            startLoading()
+        }
+    }
+    
+    func startLoading() {
+        isLoading = true
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            isLoading = false
+        }
+    }
 }
