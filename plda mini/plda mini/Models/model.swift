@@ -57,15 +57,15 @@ class DiaryStore {
     
     init() {
         list = [
-            Diary(title: "일기1", content: "어쩌고저쩌고ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ", editDate: stringToDate("20231129")),
-            Diary(title: "일기2", content: "어쩌고저쩌고", editDate: stringToDate("20231128")),
-            Diary(title: "일기3", content: "어쩌고저쩌고", editDate: stringToDate("20231127")),
-            Diary(title: "일기4", content: "어쩌고저쩌고", editDate: stringToDate("20231126")),
-            Diary(title: "일기5", content: "어쩌고저쩌고", editDate: stringToDate("20231125")),
-            Diary(title: "일기6", content: "어쩌고저쩌고", editDate: stringToDate("20231124")),
-            Diary(title: "일기7", content: "어쩌고저쩌고", editDate: stringToDate("20231123")),
-            Diary(title: "일기8", content: "어쩌고저쩌고", editDate: stringToDate("20231122")),
-            Diary(title: "일기9", content: "어쩌고저쩌고", editDate: stringToDate("20231121"))
+//            Diary(title: "일기1", content: "어쩌고저쩌고ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ", editDate: stringToDate("20231129")),
+//            Diary(title: "일기2", content: "어쩌고저쩌고", editDate: stringToDate("20231128")),
+//            Diary(title: "일기3", content: "어쩌고저쩌고", editDate: stringToDate("20231127")),
+//            Diary(title: "일기4", content: "어쩌고저쩌고", editDate: stringToDate("20231126")),
+//            Diary(title: "일기5", content: "어쩌고저쩌고", editDate: stringToDate("20231125")),
+//            Diary(title: "일기6", content: "어쩌고저쩌고", editDate: stringToDate("20231124")),
+//            Diary(title: "일기7", content: "어쩌고저쩌고", editDate: stringToDate("20231123")),
+//            Diary(title: "일기8", content: "어쩌고저쩌고", editDate: stringToDate("20231122")),
+//            Diary(title: "일기9", content: "어쩌고저쩌고", editDate: stringToDate("20231121"))
 
         ]
     }
@@ -96,9 +96,9 @@ struct Feedback: Codable {
 @Observable
 class PrefferdVideoStore {
     var list: [Video] = [
-        Video(videoId: "o69gtsmumbA", tumbnailUrl: "https://i.ytimg.com/vi/o69gtsmumbA/hqdefault.jpg", title: "I&#39;LL BE THERE / The Jackson 5"),
-        Video(videoId: "MiQoz_YYNg8", tumbnailUrl: "https://i.ytimg.com/vi/MiQoz_YYNg8/hqdefault.jpg", title: "Lean On Me - Music Travel Love (Iligan City, Philippines) Bill Withers Cover"),
-        Video(videoId: "M4yjfyW8CUY", tumbnailUrl: "https://i.ytimg.com/vi/M4yjfyW8CUY/hqdefault.jpg", title: "&quot;YOU&#39;VE GOT A FRIEND&quot; (w/ lyrics)  by James Taylor #You&#39;veGotAFriend #JamesTaylor")
+//        Video(videoId: "o69gtsmumbA", tumbnailUrl: "https://i.ytimg.com/vi/o69gtsmumbA/hqdefault.jpg", title: "I&#39;LL BE THERE / The Jackson 5"),
+//        Video(videoId: "MiQoz_YYNg8", tumbnailUrl: "https://i.ytimg.com/vi/MiQoz_YYNg8/hqdefault.jpg", title: "Lean On Me - Music Travel Love (Iligan City, Philippines) Bill Withers Cover"),
+//        Video(videoId: "M4yjfyW8CUY", tumbnailUrl: "https://i.ytimg.com/vi/M4yjfyW8CUY/hqdefault.jpg", title: "&quot;YOU&#39;VE GOT A FRIEND&quot; (w/ lyrics)  by James Taylor #You&#39;veGotAFriend #JamesTaylor")
     ]
     
     func append(video: Video) {

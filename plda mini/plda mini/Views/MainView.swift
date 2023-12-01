@@ -21,6 +21,20 @@ struct MainView: View {
             VStack{
                 ScrollView(.vertical, showsIndicators: true){
                     VStack{
+                        if(diaryStore.list.isEmpty){
+                            VStack{
+                                Spacer()
+                                
+                                Text("아직 아무것도 작성하지 않았어요!")
+                                    .font(.bold16)
+                                    .padding(.bottom,4)
+                                
+                                Text("하단의 아이콘을 눌러 일기를 작성해 볼까요?")
+                                    .font(.bold16)
+                            }
+                            .padding(.top,300)
+                        }
+                        
                         ForEach(diaryStore.list, id: \.id) { diary in
                             NavigationLink(value: diary, label: {
                                 HStack{
@@ -72,7 +86,7 @@ struct MainView: View {
                                         .frame(width: 20, height: 16)
                                 }
                             })
-                            Spacer()
+                    Spacer()
                 } //ScrollView
                 ZStack{
                     Button(action: {}) {
@@ -90,8 +104,8 @@ struct MainView: View {
             } //VStack
             .background(Image("background2"))
             .navigationDestination(for: Diary.self) { diary in
-                 DetailView(diary: diary)
-             }
+                DetailView(diary: diary)
+            }
             .navigationDestination(for: Int.self) { value in
                 switch value {
                 case 1 : EditView()
