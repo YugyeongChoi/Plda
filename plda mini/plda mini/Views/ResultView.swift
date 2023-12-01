@@ -41,69 +41,72 @@ struct ResultView: View {
             
             Spacer()
         
-            LoadingView()
-            
-            if let result = result {
-                TabView(){
-                    ForEach(0..<result.youtubeDataList.count, id: \.self) { index in
-                        VStack{
-                            Spacer()
-                            
-                            AsyncImage(url: URL(string: result.youtubeDataList[index].tumbnailUrl)) { image in
-                                image.resizable()
+            ZStack{
+                LoadingView()
+                
+                if let result = result {
+                    TabView(){
+                        ForEach(0..<result.youtubeDataList.count, id: \.self) { index in
+                            VStack{
+                                Spacer()
+                                
+                                AsyncImage(url: URL(string: result.youtubeDataList[index].tumbnailUrl)) { image in
+                                    image.resizable()
                                 } placeholder: {
                                     ProgressView()
-                            }
-                                                        
-                            Text(result.youtubeDataList[index].title)
-                                .foregroundColor(.black)
-                                .font(.bold16)
-                                .padding(.bottom,18)
-
-                            HStack{
-                                Spacer()
+                                }
                                 
-                                Button(action: {
-                                    if let url = URL(string: "https://www.youtube.com/watch?v=" + result.youtubeDataList[index].videoId) {
-                                        UIApplication.shared.open(url, options: [:])}
+                                Text(result.youtubeDataList[index].title)
+                                    .foregroundColor(.black)
+                                    .font(.bold16)
+                                    .padding(.bottom,18)
+                                
+                                HStack{
+                                    Spacer()
                                     
-                                }, label: {
-                                    Image("play")
-                                        .resizable()
-                                        .frame(width: 18, height: 18)
-                                })
-                                
-                                Spacer()
-                                
-                                Button(action: {
-                                    heart[index].toggle()
+                                    Button(action: {
+                                        if let url = URL(string: "https://www.youtube.com/watch?v=" + result.youtubeDataList[index].videoId) {
+                                            UIApplication.shared.open(url, options: [:])}
+                                        
+                                    }, label: {
+                                        Image("play")
+                                            .resizable()
+                                            .frame(width: 18, height: 18)
+                                    })
                                     
-                                }, label: {
-                                    Image(heart[index] ? "heart" : "heart_gray")
-                                })
+                                    Spacer()
+                                    
+                                    Button(action: {
+                                        heart[index].toggle()
+                                        
+                                    }, label: {
+                                        Image(heart[index] ? "heart" : "heart_gray")
+                                    })
+                                    Spacer()
+                                    
+                                }
                                 Spacer()
+                                
+                                Text("\(index+1)/3")
+                                    .font(.medium12)
+                                    .foregroundStyle(Color.gray60)
+                                
                                 
                             }
-                            Spacer()
-                            
-                            Text("\(index+1)/3")
-                                .font(.medium12)
-                                .foregroundStyle(Color.gray60)
-                            
-                            
+                            .padding(.all,10)
                         }
-                        .padding(.all,10)
+                        
                     }
-                    
+                    .background(Color.white)
+                    .cornerRadius(12)
+                    .frame(width: 350,height: 300)
+                    .shadow(color: Color.darkGreen.opacity(0.3), radius: 10, x: 0, y: 4)
+                    .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
                 }
-                .background(Color.white)
-                .cornerRadius(12)
-                .frame(width: 200,height: 200)
-                .shadow(color: Color.darkGreen.opacity(0.3), radius: 10, x: 0, y: 4)
-                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
             }
             
             Spacer()
+            
             
             NavigationLink(destination: PlaylistView(),
                 label:{
@@ -121,6 +124,26 @@ struct ResultView: View {
                     )
                     .padding(.top,10)
             })
+            .simultaneousGesture(TapGesture().onEnded(
+                {
+                    for i in 0...2 {
+                        if (heart[i]) {
+                            prefferedVideos.append(video: result!.youtubeDataList[i])
+                        }
+                    }
+                    
+                    let feedbackdata = makeFeedbacks(prompts_id: prompts_id, videos: result!.youtubeDataList, hearts: heart)
+                    
+                    Task {
+                        do {
+                            try await requestPost(feedbackData: feedbackdata)
+                        }
+                        catch {
+                            print("fail")
+                        }
+                    }
+                }
+            ))
             
             Spacer()
         }

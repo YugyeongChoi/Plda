@@ -106,60 +106,74 @@ struct EditView: View {
         } //ZStack
         .sheet(isPresented: $isPromptSelectionPresented){
             NavigationStack {
-                VStack {
-                    Text("🍀 어떤 노래를 추천 받고 싶나요?")
-                        .font(.headline)
-                        .padding(.vertical, 10)
+                ZStack{
                     
-                    Button {
-                        
-                        promptID = 1
-                        
-                    } label: {
-                        HStack{
-                            Image(systemName: "applepencil.and.scribble")
-                            if (prompts.count > 0) {
-                                Text(prompts[0].prompt)
-                            }
-                        }
-                    }
-                    .buttonStyle(InsetRoundButton(labelColor: .white, backgroundColor: promptID == 1 ? Color.gray60 : Color.lightGreen))
-                    .padding(.vertical, 10)
+                    RoundedRectangle(cornerRadius: 40)
+                        .fill(Color.darkGreen)
+                        .ignoresSafeArea()
+                        .offset(y:60)
                     
-                    Button {
+                    RoundedRectangle(cornerRadius: 40)
+                        .fill(.white)
+                        .ignoresSafeArea()
+                        .offset(y:100)
+                    VStack {
+                        Spacer()
+                        Text("🍀 어떤 노래를 추천 받고 싶나요?")
+                            .font(.bold16)
+                            .padding(.vertical, 10)
                         
-                        promptID = 2
-                        
-                    } label: {
-                        HStack{
-                            Image(systemName: "applepencil.and.scribble")
-                            if (prompts.count > 0) {
-                                Text(prompts[1].prompt)
-                            }
-                        }
-                    }
-                    .buttonStyle(InsetRoundButton(labelColor: .white, backgroundColor: promptID == 2 ? Color.gray60 : Color.lightGreen))
-                    .padding(.vertical, 10)
-                    
-                    Button {
-                        
-                        promptID = 3
-                        
-                    } label: {
-                        HStack{
-                            Image(systemName: "applepencil.and.scribble")
-                            
-                            if (prompts.count > 0) {
-                                Text(prompts[2].prompt)
-                            }
-                        }
-                    }
-                    .buttonStyle(InsetRoundButton(labelColor: .white, backgroundColor: promptID == 3 ? Color.gray60 : Color.lightGreen))
-                    .padding(.vertical, 10)
-                }
-                .toolbar{
-                    ToolbarItem(placement: .topBarTrailing) {
                         Button {
+                            promptID = 1
+                            
+                        } label: {
+                            HStack{
+                                Image(systemName: "applepencil.and.scribble")
+                                if (prompts.count > 0) {
+                                    Text(prompts[0].prompt)
+                                        .font(.medium16)
+                                }
+                            }
+                        }
+                        .buttonStyle(InsetRoundButton(labelColor: .white, backgroundColor: promptID == 1 ? Color.lightGreen : Color.gray60))
+                        .padding(.vertical, 10)
+                        
+                        Button {
+                            
+                            promptID = 2
+                            
+                        } label: {
+                            HStack{
+                                Image(systemName: "applepencil.and.scribble")
+                                if (prompts.count > 0) {
+                                    Text(prompts[1].prompt)
+                                        .font(.medium16)
+                                    
+                                }
+                            }
+                        }
+                        .buttonStyle(InsetRoundButton(labelColor: .white, backgroundColor: promptID == 2 ? Color.lightGreen : Color.gray60))
+                        .padding(.vertical, 10)
+                        
+                        Button {
+                            
+                            promptID = 3
+                            
+                        } label: {
+                            HStack{
+                                Image(systemName: "applepencil.and.scribble")
+                                
+                                if (prompts.count > 0) {
+                                    Text(prompts[2].prompt)
+                                        .font(.medium16)
+                                    
+                                }
+                            }
+                        }
+                        .buttonStyle(InsetRoundButton(labelColor: .white, backgroundColor: promptID == 3 ? Color.lightGreen : Color.gray60))
+                        .padding(.vertical, 10)
+                        
+                        Button(action: {
                             isPromptSelectionPresented = false
                             
                             Task {
@@ -176,15 +190,29 @@ struct EditView: View {
                             }
                             
                             isPlayListPresented = true
-
-                        } label: {
-                            Text("저장")
-                        }
+                        }, label:{
+                                HStack{
+                                    Text("노래 추천받으러 가기")
+                                        .font(.medium12)
+                                        .multilineTextAlignment(.center)
+                                        .foregroundColor(.black)
+                                        .padding(.horizontal,25)
+                                        .padding(.vertical,10)
+                                }
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 7)
+                                        .stroke(Color.lightGreen, lineWidth: 2)
+                                )
+                                .padding(.vertical,10)
+                        })
                         
                     }
+                
                 }
             }
-            .presentationDetents([.height(350)])
+            .presentationDetents([.height(470)])
+            .presentationDragIndicator(.hidden)
+            .presentationBackground(.clear)
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(

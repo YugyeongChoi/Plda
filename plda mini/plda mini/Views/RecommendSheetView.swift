@@ -27,6 +27,8 @@ struct RecommendSheetView: View {
                 .offset(y:110)
             
             VStack{
+                Spacer()
+                
                 TabView(){
                     ForEach(0..<3, id: \.self) { index in
                         VStack{
@@ -69,7 +71,7 @@ struct RecommendSheetView: View {
                 }
                 .background(Color.white)
                 .cornerRadius(12)
-                .frame(width: 200,height: 200)
+                .frame(width: 280,height: 260)
                 .shadow(color: Color.darkGreen.opacity(0.3), radius: 10, x: 0, y: 4)
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
                 
