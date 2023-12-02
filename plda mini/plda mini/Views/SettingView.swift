@@ -10,6 +10,8 @@ import SwiftUI
 struct SettingView: View {
     @Environment(Path.self) var path
     @Environment(DiaryStore.self) var diaryStore
+    @Environment(Profile.self) var profile
+
     @State var setting: [String] = ["알림 관리", "언어", "업데이트 정보", "약관 및 이용동의", "개인정보 취급 방침"]
 
     var body: some View {
@@ -18,13 +20,20 @@ struct SettingView: View {
                 
                 Spacer()
                 
-                Image("play")
+                profile.userProfileImage
+                    .resizable()
+                    .frame(width: 150, height: 150)
+                    .clipShape(Circle())
+                    .overlay{
+                        Circle().stroke(.white, lineWidth: 4)
+                    }
+                    .shadow(radius: 7)
                     .padding(.horizontal,40)
                     .padding(.bottom,12)
                 
                 HStack(spacing : 0){
                     Spacer()
-                    Text("닉네임")
+                    Text(profile.username)
                         .font(.bold16)
                         .foregroundColor(.black)
                         .multilineTextAlignment(.center)

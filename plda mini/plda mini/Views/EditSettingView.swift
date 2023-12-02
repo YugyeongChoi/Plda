@@ -6,20 +6,36 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct EditsettingView: View {
-    @State private var editname = ""
     @Environment(\.presentationMode) var presentationMode
+    @Environment (Profile.self) var profile
+    
+    @State var draftProfile: Profile = Profile.default
+    @State private var userImageItem: PhotosPickerItem?
     
     var body: some View {
         NavigationView(){
             VStack{
                 Spacer()
-                Image("play")
-                    .padding(.horizontal,40)
-                    .padding(.bottom,80)
+                PhotosPicker(selection: $userImageItem,
+                             matching: .images,
+                             photoLibrary: .shared()) {
+                    draftProfile.userProfileImage
+                        .resizable()
+                        .frame(width: 150, height: 150)
+                        .clipShape(Circle())
+                        .overlay{
+                            Circle().stroke(.white, lineWidth: 4)
+                        }
+                        .shadow(radius: 7)
+                        .padding(.horizontal,40)
+                        .padding(.bottom,80)
+                }
                 
-                TextField("닉네임", text: $editname)
+                
+                TextField("닉네임", text: $draftProfile.username)
                     .multilineTextAlignment(.center)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .keyboardType(.emailAddress)
@@ -51,12 +67,24 @@ struct EditsettingView: View {
             .background(Image("background2"))
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
+        .onChange(of: userImageItem) { _ in
+            Task {
+                if let data = try? await userImageItem?.loadTransferable(type: Data.self) {
+                    if let uiImage = UIImage(data: data) {
+                        draftProfile.userProfileImage = Image(uiImage: uiImage)
+                        return
+                    }
+                }
+                print("Failed")
+            }
+        }
         .navigationBarBackButtonHidden(true)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .principal) {
                 HStack(){
                     Button(action: {
+                        profile.set(username: draftProfile.username, userProfileImage: draftProfile.userProfileImage)
                         presentationMode.wrappedValue.dismiss()
                     }, label: {
                         Image("left")
